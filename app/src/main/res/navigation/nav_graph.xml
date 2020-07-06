@@ -3,24 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity">
-
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.navigationcompsampleapp.MainActivity"
-        android:label="activity_main"
-        tools:layout="@layout/activity_main" />
+    app:startDestination="@id/action_hobbies">
     <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.example.navigationcompsampleapp.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
+        android:id="@+id/action_hobbies"
+        android:name="com.example.navigationcompsampleapp.HobbiesFragment"
+        android:label="fragment_hobbies"
+        tools:layout="@layout/fragment_hobbies" />
+    <fragment
+        android:id="@+id/action_movies"
+        android:name="com.example.navigationcompsampleapp.MoviesFragment"
+        android:label="fragment_movies"
+        tools:layout="@layout/fragment_movies" />
+    <fragment
+        android:id="@+id/action_pets"
+        android:name="com.example.navigationcompsampleapp.PetsFragment"
+        android:label="fragment_pets"
+        tools:layout="@layout/fragment_pets">
         <action
-            android:id="@+id/action_blankFragment_to_userFragment"
-            app:destination="@id/userFragment" />
+            android:id="@+id/action_petsFragment_to_PetDetailsFragment"
+            app:destination="@id/petDetailsFragment">
+            <argument
+                android:name="petDetails"
+                app:argType="com.example.navigationcompsampleapp.PetDetails" />
+        </action>
     </fragment>
     <fragment
-        android:id="@+id/userFragment"
-        android:name="com.example.navigationcompsampleapp.UserFragment"
-        android:label="UserFragment" />
+        android:id="@+id/petDetailsFragment"
+        android:name="com.example.navigationcompsampleapp.PetDetailsFragment"
+        android:label="fragment_pet_details"
+        tools:layout="@layout/fragment_pet_details">
+        <argument
+            android:name="petDetails"
+            app:argType="com.example.navigationcompsampleapp.PetDetails" />
+    </fragment>
 </navigation>
