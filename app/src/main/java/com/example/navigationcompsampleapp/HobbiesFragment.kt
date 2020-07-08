@@ -1,20 +1,18 @@
 package com.example.navigationcompsampleapp
 
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.parcel.Parcelize
 
 class HobbiesFragment : Fragment() {
-    private lateinit var hobbyList: ArrayList<Hobby>
+
+    private val hobbyList by lazy { ArrayList<Hobby>() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        hobbyList = ArrayList()
         hobbyList.add(Hobby("Trčanje"))
         hobbyList.add(Hobby("Planinarenje"))
         hobbyList.add(Hobby("Biciklizam"))
@@ -29,5 +27,4 @@ class HobbiesFragment : Fragment() {
     }
 }
 
-@Parcelize
-data class Hobby(val name: String) : Parcelable
+data class Hobby(val name: String)

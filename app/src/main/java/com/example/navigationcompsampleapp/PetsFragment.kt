@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.parcel.Parcelize
 
 class PetsFragment : Fragment(), OnPetClick {
-    private lateinit var petList: ArrayList<Pet>
+
+    private val petList by lazy { ArrayList<Pet>() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        petList = ArrayList()
         petList.add(Pet("Ben", "Pitbull"))
-        petList.add(Pet("Max", "American stafford"))
+        petList.add(Pet("Max", "American Stafford"))
         petList.add(Pet("Rocky", "Husky"))
     }
 
@@ -30,14 +30,14 @@ class PetsFragment : Fragment(), OnPetClick {
     }
 
     override fun onPetClick(pet: Pet) {
-        val petDetails = PetDetails("Ben", "Pitbull", "white", "50lbs", "45cm")
+        val petDetails = PetDetails("Ben", "Pitbull", "White", "25kg", "35cm")
         val action = PetsFragmentDirections.actionPetsFragmentToPetDetailsFragment(petDetails)
         NavHostFragment.findNavController(this).navigate(action)
     }
 }
 
-@Parcelize
-data class Pet(val name: String, val breed: String) : Parcelable
+
+data class Pet(val name: String, val breed: String)
 
 @Parcelize
 data class PetDetails(val name: String, val breed: String, val color: String, val weight: String, val height: String) : Parcelable

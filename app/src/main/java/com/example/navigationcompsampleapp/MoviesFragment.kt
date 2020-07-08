@@ -1,21 +1,18 @@
 package com.example.navigationcompsampleapp
 
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.parcel.Parcelize
 
 class MoviesFragment : Fragment() {
 
-    private lateinit var movieList: ArrayList<Movie>
+    private val movieList by lazy { ArrayList<Movie>() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        movieList = ArrayList()
         movieList.add(Movie("Terminator", "1992"))
         movieList.add(Movie("Terminator 2", "1995"))
         movieList.add(Movie("Terminator 3", "1999"))
@@ -30,5 +27,4 @@ class MoviesFragment : Fragment() {
     }
 }
 
-@Parcelize
-data class Movie(val title: String, val year: String) : Parcelable
+data class Movie(val title: String, val year: String)

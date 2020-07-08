@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/action_hobbies">
+    app:startDestination="@id/navigation_movies">
     <fragment
-        android:id="@+id/action_hobbies"
+        android:id="@+id/navigation_hobbies"
         android:name="com.example.navigationcompsampleapp.HobbiesFragment"
         android:label="fragment_hobbies"
         tools:layout="@layout/fragment_hobbies" />
     <fragment
-        android:id="@+id/action_movies"
+        android:id="@+id/navigation_movies"
         android:name="com.example.navigationcompsampleapp.MoviesFragment"
         android:label="fragment_movies"
         tools:layout="@layout/fragment_movies" />
     <fragment
-        android:id="@+id/action_pets"
+        android:id="@+id/navigation_pets"
         android:name="com.example.navigationcompsampleapp.PetsFragment"
         android:label="fragment_pets"
         tools:layout="@layout/fragment_pets">

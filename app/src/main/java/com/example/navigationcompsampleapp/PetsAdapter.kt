@@ -7,7 +7,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PetsAdapter(var data: ArrayList<Pet>, private val onClick: OnPetClick) : RecyclerView.Adapter<PetsAdapter.ViewHolder>() {
+class PetsAdapter(private val data: ArrayList<Pet>, private val onClick: OnPetClick) : RecyclerView.Adapter<PetsAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val mName: TextView = itemView.findViewById(R.id.name)
